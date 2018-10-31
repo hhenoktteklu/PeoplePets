@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+    <h2>Home page</h2>
+<div th:each="eachPerson:${persons}">
+    <b th:inline="text">[[${eachPerson.firstName}]] [[${eachPerson.lastName}]]</b>
+
+   <div th:each="eachPet:${eachPerson.pets}">
+       <p th:inline="text">[[${eachPet.petName}]]</p>
+   </div>
+
+</div>
+</body>
+</html>
